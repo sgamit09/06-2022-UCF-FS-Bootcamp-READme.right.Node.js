@@ -40,7 +40,7 @@ const questions = async () => {
         // {
         //     type: 'input',
         //     name: 'screenshotURL',
-        //     message: 'Enter image URL for screenshot of Project: ',
+        //     message: 'Enter image URL for screenshot of Project (relative path): ',
         // },
         // {
         //     type: 'list',
@@ -51,12 +51,12 @@ const questions = async () => {
         // {
         //     type: 'confirm',
         //     name: 'projGuidelines',
-        //     message: 'Add Guidelines for Contribution? (Y/N)',
+        //     message: 'Add Guidelines for Contribution? ',
         // },
         // {
         //     type: 'confirm',
         //     name: 'projTesting',
-        //     message: 'Add Testing Section? (Y/N)',
+        //     message: 'Add Testing Section? ',
         // },
         // {
         //     type: 'input',
@@ -66,11 +66,16 @@ const questions = async () => {
         // {
         //     type: 'input',
         //     name: 'projQuestion2',
+        //     message: 'Enter GitHub profile link: ',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'projQuestion3',
         //     message: 'Enter email address: ',
         // },
         // {
         //     type: 'checkbox',
-        //     name: 'Contributors',
+        //     name: 'projContributors',
         //     message: 'Who contributed to this project?  ',
         //     choices: ['Ned', 'Spider-Man', 'Green-Goblin', 'Doc-Ock', 'Multiverse Me']
         // },
@@ -84,19 +89,13 @@ const questions = async () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    // const { projAuthor, projTitle, projDescription, projInstallation, } = data;
 
-   const { projAuthor, projTitle, projDescription, projInstallation, npmInstall, projUsage, screenshotURL,
-         projLicense, projGuidelines, projTesting, projQuestion1, projQuestion2, Contributors
-         } = data;
+//    const { projAuthor, projTitle, projDescription, projInstallation, npmInstall, projUsage, screenshotURL,
+//          projLicense, projGuidelines, projTesting, projQuestion1, projQuestion2, Contributors
+//          } = data;
 
+     generateMarkdown(data);
 
-    console.log(projAuthor);
-    console.log(projTitle);
-    console.log(projDescription); 
-    console.log(projInstallation); 
-    console.log(typeof projInstallation); 
-    console.log(projInstallation[0]); 
 
     // fileName = 'READme.md'
     // let content = generateMarkdown(data)
