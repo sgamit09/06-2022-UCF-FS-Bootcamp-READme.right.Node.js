@@ -13,73 +13,101 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 // this works!!!
-return `
-# ${data.projTitle}
 
-# Table of Content
--[description](#description)
--[installation](#installation)
--[usage](#usage)
--[licenses](#licenses)
--[contribution](#contribution)
--[test](#test)
--[username](#username)
--[profile](#profile)
+if(data.projTesting === 'Yes' && data.projGuidelines === 'Yes'){
+    let projTesting =  "Insert Project Testing";
+    let projGuidelines = "Insert Project Guidelines";
+    return projGuidelines, projTesting;  
+}
+console.log(projTesting);
+console.log(projGuidelines);
+// } else if (data.projTesting === 'Yes' && data.projGuidelines === 'No'){
+//     let projTesting =  "Insert Project Testing";
+//     let projGuidelines = "N/A";
+//     console.log(projTesting);
+//     console.log(projGuidelines);
+//     return projGuidelines, projTesting; 
+// } else if (data.projTesting === 'No' && data.projGuidelines === 'No') {
+//     let projTesting =  "N/A";
+//     let projGuidelines = "N/A";
+//     console.log(projTesting);
+//     console.log(projGuidelines);
+//     return projGuidelines, projTesting;   
+// }
+
+// console.log(data.projTitle);
+// console.log(data.projDescription);
+// console.log(data.projInstallation);
+
+// return `
+// # ${data.projTitle}
+
+// # Table of Content
+
+// -[description](#description)
+// -[installation](#installation)
+// -[usage](#usage)
+// -[licenses](#licenses)
+// -[contribution](#contribution)
+// -[test](#test)
+// -[username](#username)
+// -[profile](#profile)
 
   
-##description: 
+// ##Description: 
 
-${data.projDescription}
-
-    
-##installation:
-
-Softwares Needed:
-* ${data.projInstallation[0]}
-* ${data.projInstallation[1]}
-* ${data.projInstallation[2]}
-* ${data.projInstallation[3]}
-
-
-##usage:
-
-${data.projUsage}
-
-![Project Screenshot] (${data.screenshotURL})
+// ${data.projDescription}
 
     
-##licenses:
+// ##Installation:
 
-${data.projLicense}
+// Softwares Needed:
 
-
-##test:
-
-//add if statement? if Y then add ... if not then add N/A
-${data.projTesting}
-
-
-##contribution:
-
-//add if statement? if Y then add ... if not then add N/A
-${data.projGuidelines}
+// * ${data.projInstallation[0]}
+// * ${data.projInstallation[1]}
+// * ${data.projInstallation[2]}
+// * ${data.projInstallation[3]}
 
 
-##Questions:
-For any questions,
+// ##Usage:
 
-* ${data.projAuthor} -  ${data.projQuestion3}
+// ${data.projUsage}
+
+// ![Project Screenshot] (${data.screenshotURL})
+
+    
+// ##Licenses:
+
+// ${data.projLicense}
 
 
-##GitHub profile:
-* ${data.projQuestion1} - ${data.projQuestion2}
+// ##Testing:
 
-## Contributors:
+// ${projTesting}
 
-* ${data.projContributors[0]}
-* ${data.projContributors[0]}
-* ${data.projContributors[0]}
-`;
+
+// ##Contribution:
+
+// ${projGuidelines}
+
+
+// ##Questions:
+// For any questions,
+
+// * ${data.projAuthor} -  ${data.projQuestion3}
+
+
+// ##GitHub profile:
+// * ${data.projQuestion1} - ${data.projQuestion2}
+
+// ## Contributors:
+
+// * ${data.projContributors[0]}
+// * ${data.projContributors[1]}
+// * ${data.projContributors[2]}
+// * ${data.projContributors[3]}
+// * ${data.projContributors[4]}
+// `;
 }
 
 

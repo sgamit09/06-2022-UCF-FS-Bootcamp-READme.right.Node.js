@@ -5,28 +5,28 @@ const generateMarkdown = require('./utils/generateMarkdown')
 // TODO: Create an array of questions for user input
 const questions = async () => {
     const data = await inquirer.prompt([
-        {
-            type: 'input',
-            name: 'projAuthor',
-            message: 'Author of Project: ',
-        },
-        {
-            type: 'input',
-            name: 'projTitle',
-            message: 'Title of Project: ',
-        },
-        {
-            type: 'input',
-            name: 'projDescription',
-            message: 'Description of Project: ',
-        },
-        {
-            //object
-            type: 'checkbox',
-            name: 'projInstallation',
-            message: 'Softwares to Install:  ',
-            choices: ["Google Chrome or Web Browser", "Node.js", "npm modules", "APIs"]
-        },
+        // {
+        //     type: 'input',
+        //     name: 'projAuthor',
+        //     message: 'Author of Project: ',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'projTitle',
+        //     message: 'Title of Project: ',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'projDescription',
+        //     message: 'Description of Project: ',
+        // },
+        // {
+        //     //object
+        //     type: 'checkbox',
+        //     name: 'projInstallation',
+        //     message: 'Softwares to Install:  ',
+        //     choices: ["Google Chrome or Web Browser", "Node.js", "npm modules", "APIs"]
+        // },
         // {
         //     type: 'input',
         //     name: 'npmInstall',
@@ -48,16 +48,16 @@ const questions = async () => {
         //     message: 'List of Licenses your project has:  ',
         //     choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None', 'Drivers'],
         // },
-        // {
-        //     type: 'confirm',
-        //     name: 'projGuidelines',
-        //     message: 'Add Guidelines for Contribution? ',
-        // },
-        // {
-        //     type: 'confirm',
-        //     name: 'projTesting',
-        //     message: 'Add Testing Section? ',
-        // },
+        {
+            type: 'confirm',
+            name: 'projGuidelines',
+            message: 'Add Guidelines for Contribution? ',
+        },
+        {
+            type: 'confirm',
+            name: 'projTesting',
+            message: 'Add Testing Section? ',
+        },
         // {
         //     type: 'input',
         //     name: 'projQuestion1',
@@ -82,7 +82,7 @@ const questions = async () => {
     ])
         .then((data) => { 
 
-            writeToFile('READme.md', data) 
+            writeToFile('test', data) 
         
         })
 }
