@@ -21,6 +21,7 @@ const questions = async () => {
             message: 'Description of Project: ',
         },
         {
+            //object
             type: 'checkbox',
             name: 'projInstallation',
             message: 'Softwares to Install:  ',
@@ -68,29 +69,34 @@ const questions = async () => {
         //     message: 'Enter email address: ',
         // },
         // {
-        //     type: 'choices',
+        //     type: 'checkbox',
         //     name: 'Contributors',
         //     message: 'Who contributed to this project?  ',
         //     choices: ['Ned', 'Spider-Man', 'Green-Goblin', 'Doc-Ock', 'Multiverse Me']
         // },
     ])
-        .then((data) => { writeToFile(data) })
+        .then((data) => { 
+
+            writeToFile('READme.md', data) 
+        
+        })
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fileName = 'READme.md';
-    const { projAuthor, projTitle, projDescription, projInstallation, } = data;
+    // const { projAuthor, projTitle, projDescription, projInstallation, } = data;
 
-        //   const { projAuthor, projTitle, projDescription, projInstallation, npmInstall, projUsage, screenshotURL,
-        //     projLicense, projGuidelines, projTesting, projQuestion1, projQuestion2, Contributors
-        //       } = data;
+   const { projAuthor, projTitle, projDescription, projInstallation, npmInstall, projUsage, screenshotURL,
+         projLicense, projGuidelines, projTesting, projQuestion1, projQuestion2, Contributors
+         } = data;
 
 
     console.log(projAuthor);
     console.log(projTitle);
     console.log(projDescription); 
-    console.log(projInstallation);   
+    console.log(projInstallation); 
+    console.log(typeof projInstallation); 
+    console.log(projInstallation[0]); 
 
     // fileName = 'READme.md'
     // let content = generateMarkdown(data)
