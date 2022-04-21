@@ -26,62 +26,66 @@ const questions = async () => {
             message: 'Softwares to Install:  ',
             choices: ["Google Chrome or Web Browser", "Node.js", "npm modules", "APIs"]
         },
-        {
-            type: 'input',
-            name: 'npmInstall',
-            message: 'Insert npm commands installed (separate by commas, if none type N/A): ',
-        },
-        {
-            type: 'input',
-            name: 'projUsage',
-            message: 'Usage of Project: ',
-        },
-        {
-            type: 'input',
-            name: 'screenshotURL',
-            message: 'Enter image URL for screenshot of Project: ',
-        },
-        {
-            type: 'list',
-            name: 'projLicense',
-            message: 'List of Licenses your project has:  ',
-            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None', 'Drivers'],
-        },
-        {
-            type: 'confirm',
-            name: 'projGuidelines',
-            message: 'Add Guidelines for Contribution? (Y/N)',
-        },
-        {
-            type: 'confirm',
-            name: 'projTesting',
-            message: 'Add Testing Section? (Y/N)',
-        },
-        {
-            type: 'input',
-            name: 'projQuestion1',
-            message: 'Enter GitHub Username: ',
-        },
-        {
-            type: 'input',
-            name: 'projQuestion2',
-            message: 'Enter email address: ',
-        },
-        {
-            type: 'choices',
-            name: 'Contributors',
-            message: 'Who contributed to this project?  ',
-            choices: ['Ned', 'Spider-Man', 'Green-Goblin', 'Doc-Ock', 'Multiverse Me']
-        },
+        // {
+        //     type: 'input',
+        //     name: 'npmInstall',
+        //     message: 'Insert npm commands installed (separate by commas, if none type N/A): ',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'projUsage',
+        //     message: 'Usage of Project: ',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'screenshotURL',
+        //     message: 'Enter image URL for screenshot of Project: ',
+        // },
+        // {
+        //     type: 'list',
+        //     name: 'projLicense',
+        //     message: 'List of Licenses your project has:  ',
+        //     choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None', 'Drivers'],
+        // },
+        // {
+        //     type: 'confirm',
+        //     name: 'projGuidelines',
+        //     message: 'Add Guidelines for Contribution? (Y/N)',
+        // },
+        // {
+        //     type: 'confirm',
+        //     name: 'projTesting',
+        //     message: 'Add Testing Section? (Y/N)',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'projQuestion1',
+        //     message: 'Enter GitHub Username: ',
+        // },
+        // {
+        //     type: 'input',
+        //     name: 'projQuestion2',
+        //     message: 'Enter email address: ',
+        // },
+        // {
+        //     type: 'choices',
+        //     name: 'Contributors',
+        //     message: 'Who contributed to this project?  ',
+        //     choices: ['Ned', 'Spider-Man', 'Green-Goblin', 'Doc-Ock', 'Multiverse Me']
+        // },
     ])
         .then((data) => { writeToFile(data) })
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const { projAuthor, projTitle, projDescription, projInstallation, npmInstall, projUsage, screenshotURL,
-        projLicense, projGuidelines, projTesting, projQuestion1, projQuestion2, Contributors
-          } = data;
+    fileName = 'READme.md';
+    const { projAuthor, projTitle, projDescription, projInstallation, } = data;
+
+        //   const { projAuthor, projTitle, projDescription, projInstallation, npmInstall, projUsage, screenshotURL,
+        //     projLicense, projGuidelines, projTesting, projQuestion1, projQuestion2, Contributors
+        //       } = data;
+
 
     console.log(projAuthor);
     console.log(projTitle);
