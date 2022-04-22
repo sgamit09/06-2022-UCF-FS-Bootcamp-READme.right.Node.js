@@ -25,7 +25,7 @@ const questions = async () => {
             type: 'checkbox',
             name: 'projInstallation',
             message: 'Softwares to Install:  ',
-            choices: ["Google Chrome or Web Browser 💻", "Node.js ", "npm modules 🛠"]
+            choices: ["Google Chrome or Web Browser", "Node.js", "npm modules"]
         },
         {
             type: 'input',

@@ -1,12 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    if (license === "Apache 2.0") {
-        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`
-    } if (license === "MIT license") {
-        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`
-    } if (license === "ISC License") {
-        return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)]`
+    if (license !== 'None') {
+        `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
     } if (license === "None") {
         return `None`
     } if (license === "Drivers") {
@@ -17,19 +13,9 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) { 
-
-    if (license === "Apache 2.0") {
-        return `(https://opensource.org/licenses/Apache-2.0)`
-    } if (license === "MIT license") {
-        return `(https://opensource.org/licenses/MIT)`
-    } if (license === "ISC License") {
-        return `(https://opensource.org/licenses/ISC)`
-    } if (license === "None") {
-        return `None`
-    } if (license === "Drivers") {
-        return `Beep Beep`
-    }
-
+    if (license !== "None") {
+        return ` \n * {license}{#}`
+}
 }
 
 // TODO: Create a function that returns the license section of README
@@ -80,15 +66,15 @@ function generateMarkdown(data) {
 
 ## Table of Contents 📚
 
-* [Description](#description)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Licenses](#licenses)
-* [Testing](#testing)
-* [Contribution](#contribution)
-* [Questions](#questions)
-* [GitHub](#gitHub)
-* [Contributors](#contributors)
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Licenses](#licenses)
+5. [Testing](#testing)
+6. [Contribution](#contribution)
+7. [Questions](#questions)
+8. [GitHub](#gitHub)
+9. [Contributors](#contributors)
 
 # Description 📖
 
@@ -138,6 +124,5 @@ ${guidelineSection}
 * ${data.projContributors[4]}
 `;
 }
-
 
 module.exports = generateMarkdown;
