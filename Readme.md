@@ -32,7 +32,7 @@ Profits
 
 ![image](https://avatarfiles.alphacoders.com/893/thumb-89303.gif)
 
-https://drive.google.com/file/d/1OLQxPdKpy3_-ZuaBSZz9-FwGsjDdrC7o/view?usp=sharing
+Video Walkthrough = https://drive.google.com/file/d/1OLQxPdKpy3_-ZuaBSZz9-FwGsjDdrC7o/view?usp=sharing
 
 # License
 
