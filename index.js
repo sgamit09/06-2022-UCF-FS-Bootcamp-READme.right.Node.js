@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
+
 // TODO: Create an array of questions for user input
 const questions = async () => {
     const data = await inquirer.prompt([
@@ -24,7 +25,7 @@ const questions = async () => {
             type: 'checkbox',
             name: 'projInstallation',
             message: 'Softwares to Install:  ',
-            choices: ["Google Chrome or Web Browser", "Node.js", "npm modules", "APIs"]
+            choices: ["Google Chrome or Web Browser 💻", "Node.js ", "npm modules 🛠"]
         },
         {
             type: 'input',
@@ -50,12 +51,12 @@ const questions = async () => {
         {
             type: 'confirm',
             name: 'projGuidelines',
-            message: 'Add Guidelines for Contribution? ',
+            message: 'Add Guidelines Section Content: ',
         },
         {
             type: 'confirm',
             name: 'projTesting',
-            message: 'Add Testing Section? ',
+            message: ' Add Testing Section Content: ',
         },
         {
             type: 'input',
@@ -76,22 +77,21 @@ const questions = async () => {
             type: 'checkbox',
             name: 'projContributors',
             message: 'Who contributed to this project?  ',
-            choices: ['Ned', 'Spider-Man', 'Green-Goblin', 'Doc-Ock', 'Multiverse Me']
+            choices: ['Ned 👍', 'Spider-Man 🦸🏻‍♂️', 'Green-Goblin 💀', 'Doc-Ock 🐙', 'Multiverse Me 🙃']
         },
     ])
         .then((data) => { 
 
-            writeToFile('test', data) 
+            writeToFile('READme.md', data); 
         
         })
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
-    let content = generateMarkdown(data);
-    fs.watchFile(fileName, content);
-    console.log("READme Created!")
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
+        console.log("READme Created!");
+    });
 }
 
 // TODO: Create a function to initialize app

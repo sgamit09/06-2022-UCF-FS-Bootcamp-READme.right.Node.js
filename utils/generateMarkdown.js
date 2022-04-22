@@ -36,114 +36,107 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
     if (license !== "None") {
-        return `## License
-          
+        return `# License
+
           This project is licensed under ${license}.`
     } else {
         return "";
     }
 }
 
+function renderTestingSection(Testing){
+    if (Testing === true) {
+        return `1. Fork Code  
+                2. Copy Code onto Local
+                3. Install any npmlol 
+                4. Run Code 
+                5. Profit`
+    } else {
+        return "N/A";
+    }
+}
+
+function renderGuidelinesSection(guidelines){
+    if (guidelines === true) {
+        return `If you have a suggestion that would make this better, please fork the repo and create a pull request. 
+                You can also simply open an issue with the tag enhancement. Don't forget to give the project a star! 
+                Thanks again!`
+    } else {
+        return "N/A";
+    }
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
-    projTestingContent = "1. Fork Code from Github 2. Copy Code onto Local 3. Install any npm 4. Run Code 5. Profit"
-    projGuidelinesContent = "If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag enhancement. Don't forget to give the project a star! Thanks again!"
-
-    //If statements to add Project Testing and Guidelines Information   
-    if (data.projTesting === true && data.projGuidelines === true) {
-        let projTesting = projTestingContent;
-        let projGuidelines = projGuidelinesContent;
-        return projGuidelines, projTesting;
-    } else if (data.projTesting === true && data.projGuidelines === false) {
-        let projTesting = projTestingContent
-        let projGuidelines = "N/A";
-        return projGuidelines, projTesting;
-    } else if (data.projTesting === false && data.projGuidelines === true) {
-        let projTesting = "N/A";
-        let projGuidelines = projGuidelinesContent;
-        return projGuidelines, projTesting;
-    } else if (data.projTesting === false && data.projGuidelines === false) {
-        let projTesting = "N/A";
-        let projGuidelines = "N/A";
-        return projGuidelines, projTesting;
-    }
-
-    let licenseSectionContent = renderLicenseSection(data.license);
-    let licenseSelectionBadge = renderLicenseBadge(data.license);
-    let licenseLinkBadge = renderLicenseBadge(data.license);
-
-
+    let licenseSectionContent = renderLicenseSection(data.projLicense);
+    let licenseSelectionBadge = renderLicenseBadge(data.projLicense);
+    let licenseLinkBadge = renderLicenseLink(data.projLicense);
+    let testingSection = renderTestingSection(data.projTesting);
+    let guidelineSection = renderGuidelinesSection(data.projGuidelines);
 
     return `
-    # ${data.projTitle}
+# ${data.projTitle}
 
-    # Table of Content
+## Table of Contents
 
-    -[description](#description)
-    -[installation](#installation)
-    -[usage](#usage)
-    -[licenses](#licenses)
-    -[contribution](#contribution)
-    -[test](#test)
-    -[username](#username)
-    -[profile](#profile)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Licenses](#licenses)
+* [Testing](#testing)
+* [Contribution](#contribution)
+* [Questions](#questions)
+* [GitHub](#gitHub)
+* [Contributors](#contributors)
 
+# Description
 
-    ##Description: 
-
-    ${data.projDescription}
-
-
-    ##Installation:
-
-    Softwares Needed:
-
-    * ${data.projInstallation[0]}
-    * ${data.projInstallation[1]}
-    * ${data.projInstallation[2]}
-    * ${data.projInstallation[3]}
+${data.projDescription}
 
 
-    ##Usage:
+# Installation 🧰
 
-    ${data.projUsage}
+## Softwares Needed
 
-    ![Project Screenshot] (${data.screenshotURL})
+* ${data.projInstallation[0]}
+* ${data.projInstallation[1]}
+* ${data.projInstallation[2]}
 
+# Usage
 
-    ${licenseSectionContent}
+${data.projUsage}
 
-    ${licenseSelectionBadge}${licenseLinkBadge}
+![image](${data.screenshotURL})
 
+${licenseSectionContent}
 
-    ##Testing:
+${licenseSelectionBadge}${licenseLinkBadge}
 
-    ${projTesting}
+# Testing 🧮
 
+${testingSection}
 
-    ##Contribution:
+# Contribution
 
-    ${projGuidelines}
+${guidelineSection}
 
+# Questions
 
-    ##Questions:
-    For any questions,
+* ${data.projAuthor} -  ${data.projQuestion3} 📧 
 
-    * ${data.projAuthor} -  ${data.projQuestion3}
+# GitHub
 
+* ${data.projQuestion1} - ${data.projQuestion2} 🔗
 
-    ##GitHub profile:
-    * ${data.projQuestion1} - ${data.projQuestion2}
+# Contributors:
 
-    ## Contributors:
-
-    * ${data.projContributors[0]}
-    * ${data.projContributors[1]}
-    * ${data.projContributors[2]}
-    * ${data.projContributors[3]}
-    * ${data.projContributors[4]}
-    `;
+* ${data.projContributors[0]}
+* ${data.projContributors[1]}
+* ${data.projContributors[2]}
+* ${data.projContributors[3]}
+* ${data.projContributors[4]}
+`;
 }
 
 
