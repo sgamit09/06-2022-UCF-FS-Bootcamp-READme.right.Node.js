@@ -78,7 +78,7 @@ function generateMarkdown(data) {
     return `
 # ${data.projTitle}
 
-## Table of Contents
+## Table of Contents 📚
 
 * [Description](#description)
 * [Installation](#installation)
@@ -90,26 +90,26 @@ function generateMarkdown(data) {
 * [GitHub](#gitHub)
 * [Contributors](#contributors)
 
-# Description
+# Description 📖
 
 ${data.projDescription}
 
 
 # Installation 🧰
 
-## Softwares Needed
+## Softwares Needed 🔍
 
 * ${data.projInstallation[0]}
 * ${data.projInstallation[1]}
 * ${data.projInstallation[2]}
 
-# Usage
+# Usage 👨🏻‍💻
 
 ${data.projUsage}
 
 ![image](${data.screenshotURL})
 
-${licenseSectionContent}
+${licenseSectionContent} 🗝
 
 ${licenseSelectionBadge}${licenseLinkBadge}
 
@@ -117,19 +117,19 @@ ${licenseSelectionBadge}${licenseLinkBadge}
 
 ${testingSection}
 
-# Contribution
+# Contribution 👨‍💻
 
 ${guidelineSection}
 
-# Questions
+# Questions 🔮
 
-* ${data.projAuthor} -  ${data.projQuestion3} 📧 
+* ${data.projAuthor} 🤴 -  ${data.projQuestion3} 📧 
 
-# GitHub
+# GitHub 💼
 
-* ${data.projQuestion1} - ${data.projQuestion2} 🔗
+* ${data.projQuestion1} 🤴  - ${data.projQuestion2} 🔗
 
-# Contributors:
+# Contributors ⚔️
 
 * ${data.projContributors[0]}
 * ${data.projContributors[1]}
